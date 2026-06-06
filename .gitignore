@@ -1,0 +1,63 @@
+# Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+.gradle/
+*.apk
+*.aab
+*.jks
+*.keystore
+
+# iOS
+ios/Pods/
+ios/Podfile.lock
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/local.properties
+.symlinks/
+flutter/Flutter.framework
+flutter/Flutter.podspec
+
+# Xcode
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcworkspace/xcuserdata/
+xcuserdata/
+*.xcworkspace/
+
+# Android
+*.iml
+*.gradle
+.gradle
+local.properties
+android/.classpath
+android/.project
+android/.settings/
+android/local.properties
+android/app/local.properties
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.metadata
+
+# Test & Coverage
+coverage/
+.coverage
+*.lcov
+
+# Documentation
+doc/api/
+
+# Miscellaneous
+*.lock
+*.log
