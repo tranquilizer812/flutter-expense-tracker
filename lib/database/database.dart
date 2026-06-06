@@ -1,8 +1,6 @@
-import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
-import 'dart:io';
-import '../models/expense.dart';
+import 'package:sqflite/sqflite.dart';
 
 class AppDatabase {
   static final AppDatabase _instance = AppDatabase._internal();
@@ -20,15 +18,19 @@ class AppDatabase {
   }
 
   Future<Database> _initDatabase() async {
-    final directory = await getApplicationDocumentsDirectory();
-    final path = join(directory.path, 'expense_tracker.db');
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      final path = join(directory.path, 'expense_tracker.db');
 
-    return openDatabase(
-      path,
-      version: 1,
-      onCreate: _onCreate,
-      onUpgrade: _onUpgrade,
-    );
+      return await openDatabase(
+        path,
+        version: 1,
+        onCreate: _onCreate,
+        onUpgrade: _onUpgrade,
+      );
+    } catch (e) {
+      rethrow;
+    }
   }
 
   Future<void> _onCreate(Database db, int version) async {

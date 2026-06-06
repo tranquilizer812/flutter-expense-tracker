@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../models/expense.dart';
 import '../repositories/expense_repository.dart';
-import '../utils/statistics_calculator.dart';
 import '../widgets/statistics_panel.dart';
 import '../widgets/expense_list.dart';
 import '../widgets/empty_state.dart';

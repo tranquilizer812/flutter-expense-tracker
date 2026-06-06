@@ -5,15 +5,11 @@ import 'package:expense_tracker/widgets/empty_state.dart';
 void main() {
   group('EmptyState Widget Tests', () {
     testWidgets('EmptyState displays correct message', (WidgetTester tester) async {
-      var callbackCalled = false;
-
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
             body: EmptyState(
-              onAddExpense: () {
-                callbackCalled = true;
-              },
+              onAddExpense: () {},
             ),
           ),
         ),

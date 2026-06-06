@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:intl/intl.dart';
+import '../database/database.dart';
 import '../models/expense.dart';
 import '../repositories/expense_repository.dart';
 import '../utils/statistics_calculator.dart';
@@ -270,9 +271,9 @@ class _StatisticsPanelState extends State<StatisticsPanel> {
       Colors.grey,
     ];
 
-    percentages.entries.asMap().entries.forEach((entry) {
+    final entries = percentages.entries.toList();
+    for (final entry in entries.asMap().entries) {
       final index = entry.key;
-      final category = entry.value.key;
       final percentage = entry.value.value;
 
       sections.add(
@@ -288,7 +289,7 @@ class _StatisticsPanelState extends State<StatisticsPanel> {
           radius: 50,
         ),
       );
-    });
+    }
 
     return Card(
       child: Padding(
@@ -408,7 +409,14 @@ class _StatisticsPanelState extends State<StatisticsPanel> {
                   height: 200,
                   child: LineChart(
                     LineChartData(
-                      spots: spots,
+                      lineBarsData: [
+                        LineChartBarData(
+                          spots: spots,
+                          isCurved: false,
+                          color: Colors.blue,
+                          barWidth: 2,
+                        ),
+                      ],
                       gridData: FlGridData(show: true),
                       borderData: FlBorderData(show: false),
                       titlesData: FlTitlesData(
@@ -550,5 +558,3 @@ class _StatisticsPanelState extends State<StatisticsPanel> {
     );
   }
 }
-
-import '../database/database.dart';

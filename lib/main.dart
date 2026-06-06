@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import 'database/database.dart';
-import 'models/expense.dart';
 import 'repositories/expense_repository.dart';
 import 'screens/home_screen.dart';
 
